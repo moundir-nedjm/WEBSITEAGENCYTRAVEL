@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | MIRA BOOKING</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+    <!-- Dashboard Layout Wrapper -->
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="MIRA BOOKING Logo">
+                        <span>MIRA BOOKING</span>
+                    </a>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="img/avatar-placeholder.jpg" alt="User Avatar" id="userAvatar">
+                </div>
+                <div class="user-info">
+                    <h4 id="userName">User Name</h4>
+                    <p id="userType">Client</p>
+                </div>
+            </div>
+            
+            <!-- Dynamic Navigation Menu based on user type (B2C or B2B) -->
+            <nav class="sidebar-nav">
+                <!-- B2C Navigation (Client) -->
+                <ul class="nav-menu b2c-menu" id="b2cMenu">
+                    <li class="nav-title">Client Menu</li>
+                    <li class="nav-item">
+                        <a href="client-dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="client-profile.html" class="nav-link">
+                            <i class="fas fa-user-circle"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="upload-documents.html" class="nav-link">
+                            <i class="fas fa-passport"></i>
+                            <span>Upload Documents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="browse-destinations.html" class="nav-link">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Browse Destinations</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="my-bookings.html" class="nav-link">
+                            <i class="fas fa-suitcase"></i>
+                            <span>My Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="custom-packages.html" class="nav-link">
+                            <i class="fas fa-cube"></i>
+                            <span>Custom Packages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="payment-history.html" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Payment History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="client-support.html" class="nav-link">
+                            <i class="fas fa-headset"></i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- B2B Navigation (Agency) -->
+                <ul class="nav-menu b2b-menu" id="b2bMenu" style="display: none;">
+                    <li class="nav-title">Agency Portal</li>
+                    <li class="nav-item">
+                        <a href="agency-dashboard.html" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agency-profile.html" class="nav-link">
+                            <i class="fas fa-building"></i>
+                            <span>Agency Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <i class="fas fa-users"></i>
+                            <span>Client Management</span>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="client-list.html">All Clients</a></li>
+                            <li><a href="add-client.html">Add New Client</a></li>
+                            <li><a href="client-documents.html">Client Documents</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Bookings</span>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="create-booking.html">Create New Booking</a></li>
+                            <li><a href="manage-bookings.html">Manage Bookings</a></li>
+                            <li><a href="booking-status.html">Booking Status</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="inventory-search.html" class="nav-link">
+                            <i class="fas fa-search"></i>
+                            <span>Inventory Search</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="commission-reports.html" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Commission Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agency-finance.html" class="nav-link">
+                            <i class="fas fa-wallet"></i>
+                            <span>Financial Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="marketing-tools.html" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span>Marketing Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="agency-support.html" class="nav-link">
+                            <i class="fas fa-headset"></i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="user-settings.html" class="footer-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#" class="footer-link" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- Top Header -->
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification-dropdown">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="dropdown-header">
+                                <h3>Notifications</h3>
+                                <a href="#">Mark all as read</a>
+                            </div>
+                            <ul class="notification-list">
+                                <li class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-ticket-alt"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Your booking has been confirmed.</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Your document verification is pending.</p>
+                                        <span class="notification-time">1 day ago</span>
+                                    </div>
+                                </li>
+                                <li class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-tag"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Special offer: 20% off on your next booking!</p>
+                                        <span class="notification-time">3 days ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-footer">
+                                <a href="all-notifications.html">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="messages-dropdown">
+                        <button class="messages-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span class="badge">2</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="dropdown-header">
+                                <h3>Messages</h3>
+                                <a href="#">Mark all as read</a>
+                            </div>
+                            <ul class="messages-list">
+                                <li class="message-item unread">
+                                    <div class="message-avatar">
+                                        <img src="img/support-agent.jpg" alt="Support Agent">
+                                    </div>
+                                    <div class="message-content">
+                                        <h4>Support Team</h4>
+                                        <p>We've processed your request...</p>
+                                        <span class="message-time">30 min ago</span>
+                                    </div>
+                                </li>
+                                <li class="message-item unread">
+                                    <div class="message-avatar">
+                                        <img src="img/system-notification.jpg" alt="System">
+                                    </div>
+                                    <div class="message-content">
+                                        <h4>System Notification</h4>
+                                        <p>Your password will expire in 7 days...</p>
+                                        <span class="message-time">2 hours ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="dropdown-footer">
+                                <a href="messages.html">View all messages</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <img src="img/avatar-placeholder.jpg" alt="User Avatar">
+                            <span class="user-name" id="headerUserName">John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="user-profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                                <li><a href="user-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content Container -->
+            <div class="content-container">
+                <!-- Page content will be inserted here -->
+                <div id="pageContent">
+                    <!-- This is a placeholder for the actual page content -->
+                    <div class="content-placeholder">
+                        <h1>Welcome to your dashboard</h1>
+                        <p>Select an option from the sidebar to get started.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle sidebar
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const dashboardWrapper = document.querySelector('.dashboard-wrapper');
+            
+            sidebarToggle.addEventListener('click', function() {
+                dashboardWrapper.classList.toggle('sidebar-collapsed');
+            });
+            
+            // Handle dropdowns in sidebar
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+            
+            // Check user type and show appropriate menu
+            // This would normally be determined by the user's login status
+            function setUserType(userType) {
+                const userName = document.getElementById('userName');
+                const headerUserName = document.getElementById('headerUserName');
+                const userTypeElement = document.getElementById('userType');
+                const b2cMenu = document.getElementById('b2cMenu');
+                const b2bMenu = document.getElementById('b2bMenu');
+                
+                // Update user info based on type
+                if (userType === 'b2b') {
+                    userName.textContent = 'Agency Name';
+                    headerUserName.textContent = 'Agency Name';
+                    userTypeElement.textContent = 'Travel Agency';
+                    
+                    // Show B2B menu, hide B2C menu
+                    b2cMenu.style.display = 'none';
+                    b2bMenu.style.display = 'block';
+                } else {
+                    userName.textContent = 'John Doe';
+                    headerUserName.textContent = 'John Doe';
+                    userTypeElement.textContent = 'Client';
+                    
+                    // Show B2C menu, hide B2B menu
+                    b2cMenu.style.display = 'block';
+                    b2bMenu.style.display = 'none';
+                }
+            }
+            
+            // Set default user type (would be determined by login in real app)
+            // For demo purposes, you can change this to 'b2b' to see the agency menu
+            setUserType('b2c');
+            
+            // Notification and message dropdowns
+            const dropdownButtons = document.querySelectorAll('.notification-btn, .messages-btn, .user-btn');
+            
+            dropdownButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const dropdown = this.nextElementSibling;
+                    dropdown.classList.toggle('show');
+                    
+                    // Close other dropdowns
+                    dropdownButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.nextElementSibling.classList.remove('show');
+                        }
+                    });
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.notification-btn') && 
+                    !e.target.matches('.messages-btn') && 
+                    !e.target.matches('.user-btn') &&
+                    !e.target.closest('.dropdown-content') &&
+                    !e.target.matches('.fas')) {
+                    
+                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+            
+            // Logout functionality
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                // In a real app, this would handle the logout process
+                alert('Logout functionality would be implemented here.');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html> 

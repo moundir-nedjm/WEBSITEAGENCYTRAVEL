@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MIRA BOOKING</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>MIRA BOOKING</h1>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="agencies.html">For Agencies</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-login" id="loginBtn">Login</a>
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Register Your Agency</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Register</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="register-section">
+        <div class="container">
+            <div class="register-content">
+                <div class="register-benefits">
+                    <h2>Join Our Network of Successful Agencies</h2>
+                    <p>Create your MIRA BOOKING account to access exclusive benefits and start providing premium travel services to your clients.</p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="benefit-details">
+                                <h3>Global Inventory</h3>
+                                <p>Access to over 500,000 properties worldwide, from luxury resorts to boutique hotels.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="benefit-details">
+                                <h3>Competitive Commissions</h3>
+                                <p>Earn industry-leading commissions starting at 10% with opportunities to increase based on volume.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="benefit-details">
+                                <h3>Powerful Tools</h3>
+                                <p>Utilize our modern booking platform with intuitive interface and comprehensive reporting.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="benefit-details">
+                                <h3>Dedicated Support</h3>
+                                <p>24/7 assistance from our specialized team to help solve any challenges that may arise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-highlight">
+                        <blockquote>
+                            "After joining MIRA BOOKING, our hotel bookings increased by 45% in the first quarter alone. The platform's ease of use and competitive rates have completely transformed our business."
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <img src="img/testimonial-1.jpg" alt="Sarah Thompson">
+                            <div>
+                                <h4>Sarah Thompson</h4>
+                                <p>Voyager Travel, CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="register-form-container">
+                    <h3>Create Your Agency Account</h3>
+                    <p class="form-intro">Complete the form below to start your registration process. All fields marked with * are required.</p>
+                    
+                    <form class="register-form" id="registerForm">
+                        <h4>Agency Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="agencyName">Agency Name*</label>
+                            <input type="text" id="agencyName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessType">Business Type*</label>
+                                <select id="businessType" required>
+                                    <option value="">Select an option</option>
+                                    <option value="travel_agency">Travel Agency</option>
+                                    <option value="tour_operator">Tour Operator</option>
+                                    <option value="corporate_travel">Corporate Travel</option>
+                                    <option value="online_travel">Online Travel Agency</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="yearsInBusiness">Years in Business*</label>
+                                <select id="yearsInBusiness" required>
+                                    <option value="">Select an option</option>
+                                    <option value="<1">Less than 1 year</option>
+                                    <option value="1-3">1-3 years</option>
+                                    <option value="4-10">4-10 years</option>
+                                    <option value=">10">More than 10 years</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website">Website (optional)</label>
+                            <input type="url" id="website" placeholder="https://www.example.com">
+                        </div>
+                        
+                        <h4>Contact Information</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title*</label>
+                            <input type="text" id="jobTitle" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="countryCode">Country Code*</label>
+                                <select id="countryCode" required>
+                                    <option value="">Select</option>
+                                    <option value="+1">+1 (USA/Canada)</option>
+                                    <option value="+44">+44 (UK)</option>
+                                    <option value="+61">+61 (Australia)</option>
+                                    <option value="+33">+33 (France)</option>
+                                    <option value="+49">+49 (Germany)</option>
+                                    <option value="+86">+86 (China)</option>
+                                    <option value="+91">+91 (India)</option>
+                                    <!-- Add more country codes as needed -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <h4>Account Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="password">Create Password*</label>
+                            <input type="password" id="password" required minlength="8">
+                            <small>Minimum 8 characters, including at least one uppercase letter, one number, and one special character.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password*</label>
+                            <input type="password" id="confirmPassword" required minlength="8">
+                        </div>
+                        
+                        <h4>Additional Information</h4>
+                        
+                        <div class="form-group">
+                            <label for="bookingsPerMonth">Estimated Monthly Bookings*</label>
+                            <select id="bookingsPerMonth" required>
+                                <option value="">Select an option</option>
+                                <option value="<10">Less than 10</option>
+                                <option value="10-50">10-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value=">200">More than 200</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hearAboutUs">How did you hear about us?*</label>
+                            <select id="hearAboutUs" required>
+                                <option value="">Select an option</option>
+                                <option value="search">Search Engine</option>
+                                <option value="social">Social Media</option>
+                                <option value="referral">Referral from another agency</option>
+                                <option value="event">Industry Event/Conference</option>
+                                <option value="advertisement">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" required>
+                                I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.*
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" required>
+                                I confirm that I am authorized to register on behalf of my agency.*
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox">
+                                I would like to receive updates, promotions, and industry news from MIRA BOOKING. (Optional)
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Complete Registration</button>
+                    </form>
+                    
+                    <p class="register-help">Need assistance? Contact our partnerships team at <a href="mailto:partnerships@mirabooking.com">partnerships@mirabooking.com</a> or call <a href="tel:+15551234567">+1 (555) 123-4567</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="registration-process">
+        <div class="container">
+            <h2 class="section-title">Registration Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Submit Application</h3>
+                        <p>Complete and submit the registration form with your agency details.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Verification</h3>
+                        <p>Our team will review your application and verify your agency information.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Account Activation</h3>
+                        <p>Once approved, we'll activate your account and send you access credentials.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Onboarding</h3>
+                        <p>Schedule a free training session with our specialists to learn the platform.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Start Booking</h3>
+                        <p>Begin offering our extensive inventory to your clients and earning commissions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How long does the registration process take?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The registration and verification process typically takes 1-2 business days. For agencies that provide all required documentation promptly, we can often complete the process within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Is there a fee to register with MIRA BOOKING?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>No, registration with MIRA BOOKING is completely free. We operate on a commission-based model, so you only pay when you make bookings through our platform.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What documentation is required for verification?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We require proof of your agency's legal business registration, such as a business license or registration certificate. Additionally, we may request proof of any relevant travel industry affiliations (IATA, ASTA, ABTA, etc.) if applicable.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Can I have multiple users for my agency account?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, you can add multiple users to your agency account with different permission levels. This allows you to manage access for different team members based on their roles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Travel Business?</h2>
+                <p>Join thousands of successful agencies already using MIRA BOOKING to grow their bookings and increase revenue.</p>
+                <div class="cta-buttons">
+                    <a href="#registerForm" class="btn btn-primary">Register Now</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>MIRA BOOKING</h2>
+                    </div>
+                    <p>Your professional B2B travel platform for modern agencies looking to provide exceptional service and competitive rates.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>For Agencies</h3>
+                    <ul>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="#">Agency Portal</a></li>
+                        <li><a href="#">Commission Structure</a></li>
+                        <li><a href="#">Training Materials</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Avenue, Suite 500, New York, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@mirabooking.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 MIRA BOOKING - All Rights Reserved</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="register.html">Register Now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Forgot Password</h2>
+            <p>Enter your email address to receive password reset instructions.</p>
+            <form class="forgot-password-form">
+                <div class="form-group">
+                    <label for="reset-email">Email Address</label>
+                    <input type="email" id="reset-email" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Reset Link</button>
+            </form>
+            <div class="modal-footer">
+                <p><a href="#" id="backToLoginLink">Back to Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Registration Form Handling
+            const registerForm = document.getElementById('registerForm');
+            
+            if (registerForm) {
+                // Password validation
+                const password = document.getElementById('password');
+                const confirmPassword = document.getElementById('confirmPassword');
+                
+                function validatePassword() {
+                    if (password.value !== confirmPassword.value) {
+                        confirmPassword.setCustomValidity("Passwords don't match");
+                    } else {
+                        confirmPassword.setCustomValidity('');
+                    }
+                }
+                
+                password.addEventListener('change', validatePassword);
+                confirmPassword.addEventListener('keyup', validatePassword);
+                
+                // Form submission
+                registerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // In a real implementation, you would send the form data to your server
+                    // For this demo, we'll just show a success message
+                    alert('Thank you for registering! We will review your application and contact you shortly.');
+                    
+                    // Reset form
+                    registerForm.reset();
+                    
+                    // Redirect to a thank you page
+                    // window.location.href = 'registration-thank-you.html';
+                });
+            }
+            
+            // Accordion Functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const accordionItem = header.parentElement;
+                    const isActive = accordionItem.classList.contains('active');
+                    
+                    // Close all items
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        item.classList.remove('active');
+                        const content = item.querySelector('.accordion-content');
+                        content.style.maxHeight = null;
+                        const icon = item.querySelector('.accordion-icon i');
+                        icon.className = 'fas fa-plus';
+                    });
+                    
+                    // Open clicked item if it wasn't already open
+                    if (!isActive) {
+                        accordionItem.classList.add('active');
+                        const content = accordionItem.querySelector('.accordion-content');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        const icon = header.querySelector('.accordion-icon i');
+                        icon.className = 'fas fa-minus';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

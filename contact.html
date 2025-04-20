@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MIRA BOOKING</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>MIRA BOOKING</h1>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="agencies.html">For Agencies</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-login" id="loginBtn">Login</a>
+                    <a href="register.html" class="btn btn-register">Register</a>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-intro">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about our services or need assistance with your agency partnership? Our team is ready to help you. Choose the most convenient way to reach us.</p>
+                    
+                    <div class="contact-options">
+                        <div class="contact-option">
+                            <div class="option-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="option-details">
+                                <h3>Call Us</h3>
+                                <p>Our support team is available Monday to Friday, 9:00 AM - 6:00 PM (EST).</p>
+                                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-option">
+                            <div class="option-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="option-details">
+                                <h3>Email Us</h3>
+                                <p>For general inquiries and support requests, send us an email.</p>
+                                <a href="mailto:info@mirabooking.com">info@mirabooking.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-option">
+                            <div class="option-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="option-details">
+                                <h3>Live Chat</h3>
+                                <p>Need immediate assistance? Chat with our support specialists.</p>
+                                <a href="#" class="btn btn-outline btn-sm">Start Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name*</label>
+                                <input type="text" id="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company/Agency Name</label>
+                            <input type="text" id="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject*</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message*</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" required>
+                                I agree to the <a href="#">privacy policy</a> and consent to processing of my data.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offices">
+        <div class="container">
+            <h2 class="section-title">Our Global Offices</h2>
+            <div class="offices-grid">
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-ny.jpg" alt="New York Office">
+                    </div>
+                    <div class="office-info">
+                        <h3>New York</h3>
+                        <p class="office-address">123 Business Avenue, Suite 500, New York, NY 10001, USA</p>
+                        <p class="office-phone">+1 (555) 123-4567</p>
+                        <p class="office-email">newyork@mirabooking.com</p>
+                    </div>
+                </div>
+                
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-london.jpg" alt="London Office">
+                    </div>
+                    <div class="office-info">
+                        <h3>London</h3>
+                        <p class="office-address">45 Oxford Street, Floor 3, London, W1D 2DZ, United Kingdom</p>
+                        <p class="office-phone">+44 20 7123 4567</p>
+                        <p class="office-email">london@mirabooking.com</p>
+                    </div>
+                </div>
+                
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-singapore.jpg" alt="Singapore Office">
+                    </div>
+                    <div class="office-info">
+                        <h3>Singapore</h3>
+                        <p class="office-address">78 Shenton Way, #15-02, Singapore 079120</p>
+                        <p class="office-phone">+65 6123 4567</p>
+                        <p class="office-email">singapore@mirabooking.com</p>
+                    </div>
+                </div>
+                
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="img/office-dubai.jpg" alt="Dubai Office">
+                    </div>
+                    <div class="office-info">
+                        <h3>Dubai</h3>
+                        <p class="office-address">Dubai Marina, JBR, Sadaf 2, Floor 32, Dubai, UAE</p>
+                        <p class="office-phone">+971 4 123 4567</p>
+                        <p class="office-email">dubai@mirabooking.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <!-- In a real implementation, you would integrate Google Maps or another mapping service here -->
+            <div class="map-placeholder">
+                <img src="img/world-map.jpg" alt="Map with MIRA BOOKING global locations">
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How do I register my agency with MIRA BOOKING?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Registration is simple. Click on the "Register" button in the top navigation, complete the registration form with your agency details, and submit required documentation. Our partnership team will review your application and get back to you within 2 business days.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What commission rates does MIRA BOOKING offer?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Our commission structure is competitive and tiered based on booking volume. Standard rates start at 10% and can increase up to 18% for high-volume partners. For detailed information, please contact our partnership team.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How quickly can I get support if I have an issue with a booking?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Our support team is available 24/7 for urgent booking issues. You can reach us through your agency portal, email, phone, or live chat. For critical matters, we guarantee a response time of under 30 minutes.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Does MIRA BOOKING offer API integration for our booking system?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, we offer comprehensive API solutions for seamless integration with your existing booking systems. Our API documentation is available in the agency portal, and our technical team can assist with implementation.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What training resources are available for our agents?</h3>
+                        <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We provide extensive training resources including video tutorials, webinars, documentation, and one-on-one training sessions. All agency partners receive complimentary onboarding training, and additional sessions can be scheduled as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Partner with MIRA BOOKING?</h2>
+                <p>Join thousands of successful agencies already using our platform to grow their business.</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-primary">Register Now</a>
+                    <a href="#" class="btn btn-secondary">Schedule a Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>MIRA BOOKING</h2>
+                    </div>
+                    <p>Your professional B2B travel platform for modern agencies looking to provide exceptional service and competitive rates.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>For Agencies</h3>
+                    <ul>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="#">Agency Portal</a></li>
+                        <li><a href="#">Commission Structure</a></li>
+                        <li><a href="#">Training Materials</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Avenue, Suite 500, New York, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@mirabooking.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 MIRA BOOKING - All Rights Reserved</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="register.html">Register Now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Forgot Password</h2>
+            <p>Enter your email address to receive password reset instructions.</p>
+            <form class="forgot-password-form">
+                <div class="form-group">
+                    <label for="reset-email">Email Address</label>
+                    <input type="email" id="reset-email" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Reset Link</button>
+            </form>
+            <div class="modal-footer">
+                <p><a href="#" id="backToLoginLink">Back to Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Contact Page Specific JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            // Form Submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you shortly.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Accordion Functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const accordionItem = header.parentElement;
+                    const isActive = accordionItem.classList.contains('active');
+                    
+                    // Close all items
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        item.classList.remove('active');
+                        const content = item.querySelector('.accordion-content');
+                        content.style.maxHeight = null;
+                        const icon = item.querySelector('.accordion-icon i');
+                        icon.className = 'fas fa-plus';
+                    });
+                    
+                    // Open clicked item if it wasn't already open
+                    if (!isActive) {
+                        accordionItem.classList.add('active');
+                        const content = accordionItem.querySelector('.accordion-content');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        const icon = header.querySelector('.accordion-icon i');
+                        icon.className = 'fas fa-minus';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

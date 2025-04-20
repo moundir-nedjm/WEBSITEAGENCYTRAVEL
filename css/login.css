@@ -1,0 +1,298 @@
+/* 
+   MIRA BOOKING - Login Page Styles
+*/
+
+/* Login Section Styles */
+.login-section {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--light);
+}
+
+.login-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.login-info {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-info h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.login-info p {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--text-lg);
+    opacity: 0.9;
+}
+
+.login-info .features {
+    margin-top: var(--spacing-lg);
+}
+
+.login-info .feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.login-info .feature-icon {
+    margin-right: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.login-form-container {
+    flex: 1;
+    padding: var(--spacing-xl);
+}
+
+.login-form-container h3 {
+    text-align: center;
+    font-size: var(--text-2xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--dark);
+}
+
+.login-form .form-group {
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--medium-dark);
+}
+
+.login-form .input-with-icon {
+    position: relative;
+}
+
+.login-form .input-icon {
+    position: absolute;
+    left: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--medium);
+}
+
+.login-form .toggle-password {
+    position: absolute;
+    right: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--medium);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: var(--text-base);
+}
+
+.login-form input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 2.5rem;
+    border: 1px solid var(--medium-light);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    transition: border-color var(--transition-fast);
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: var(--spacing-xs);
+    width: auto;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    font-size: var(--text-sm);
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-form .btn-primary {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.social-login {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.social-login p {
+    color: var(--medium-dark);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: var(--medium-light);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--medium-light);
+    background-color: var(--white);
+    color: var(--dark);
+    transition: all var(--transition-fast);
+    width: 100%;
+    max-width: 160px;
+}
+
+.social-button i {
+    margin-right: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.social-button.google i {
+    color: #DB4437;
+}
+
+.social-button.microsoft i {
+    color: #0078D4;
+}
+
+.social-button:hover {
+    background-color: var(--light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.register-link {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--medium-dark);
+}
+
+.register-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Password Reset Modal Styles */
+.reset-form .form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.reset-form .form-group p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--medium-dark);
+    font-size: var(--text-sm);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+        max-width: 600px;
+    }
+    
+    .login-info {
+        padding: var(--spacing-lg);
+    }
+    
+    .login-info h2 {
+        font-size: var(--text-2xl);
+    }
+    
+    .login-form-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-info {
+        padding: var(--spacing-md);
+    }
+    
+    .login-form-container {
+        padding: var(--spacing-md);
+    }
+    
+    .login-info h2 {
+        font-size: var(--text-xl);
+    }
+    
+    .login-info p {
+        font-size: var(--text-base);
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+} 

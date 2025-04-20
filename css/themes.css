@@ -1,0 +1,248 @@
+/**
+ * MIRA BOOKING Theme System
+ * Multiple color schemes for the website
+ */
+
+:root {
+    /* Default theme (Blue) */
+    --primary-color: #1a73e8;
+    --primary-dark: #0d47a1;
+    --primary-light: #4285f4;
+    --secondary-color: #f50057;
+    --secondary-dark: #c51162;
+    --secondary-light: #ff4081;
+    --accent-color: #ffc107;
+    --text-on-primary: #ffffff;
+    --text-on-secondary: #ffffff;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --background-color: #ffffff;
+    --background-light: #f5f5f5;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --error-color: #f44336;
+    --info-color: #2196f3;
+}
+
+/* Purple Theme */
+body.theme-purple {
+    --primary-color: #673ab7;
+    --primary-dark: #4527a0;
+    --primary-light: #9575cd;
+    --secondary-color: #ff4081;
+    --secondary-dark: #c51162;
+    --secondary-light: #ff80ab;
+    --accent-color: #ffeb3b;
+}
+
+/* Teal Theme */
+body.theme-teal {
+    --primary-color: #009688;
+    --primary-dark: #00695c;
+    --primary-light: #4db6ac;
+    --secondary-color: #ff5722;
+    --secondary-dark: #d84315;
+    --secondary-light: #ff8a65;
+    --accent-color: #ffc107;
+}
+
+/* Green Theme */
+body.theme-green {
+    --primary-color: #4caf50;
+    --primary-dark: #2e7d32;
+    --primary-light: #81c784;
+    --secondary-color: #ff4081;
+    --secondary-dark: #c51162;
+    --secondary-light: #ff80ab;
+    --accent-color: #03a9f4;
+}
+
+/* Dark Theme */
+body.theme-dark {
+    --primary-color: #3f51b5;
+    --primary-dark: #303f9f;
+    --primary-light: #7986cb;
+    --secondary-color: #ff4081;
+    --secondary-dark: #c51162;
+    --secondary-light: #ff80ab;
+    --accent-color: #ffc107;
+    --text-primary: #eeeeee;
+    --text-secondary: #b0b0b0;
+    --background-color: #121212;
+    --background-light: #1e1e1e;
+    --card-background: #242424;
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Desert Theme */
+body.theme-desert {
+    --primary-color: #d2691e;
+    --primary-dark: #8b4513;
+    --primary-light: #deb887;
+    --secondary-color: #2e8b57;
+    --secondary-dark: #006400;
+    --secondary-light: #8fbc8f;
+    --accent-color: #f5deb3;
+    --background-light: #fffaf0;
+}
+
+/* Algeria Theme */
+body.theme-algeria {
+    --primary-color: #136245;
+    --primary-dark: #0d5538;
+    --primary-light: #1e8a60;
+    --secondary-color: #d21034;
+    --secondary-dark: #a50d28;
+    --secondary-light: #e54054;
+    --accent-color: #ffffff;
+    --background-light: #f5f5f5;
+}
+
+/* Theme Switcher Styles */
+.theme-switcher {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.theme-switcher.active .theme-switcher-content {
+    transform: translateX(-20px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.theme-switcher-toggle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--text-on-primary);
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.theme-switcher-toggle:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.theme-switcher-content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.theme-switcher-content h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.theme-option {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.theme-option:hover {
+    transform: scale(1.1);
+}
+
+.theme-option.active {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Theme color previews */
+.theme-blue {
+    background-color: #1a73e8;
+}
+
+.theme-purple {
+    background-color: #673ab7;
+}
+
+.theme-teal {
+    background-color: #009688;
+}
+
+.theme-green {
+    background-color: #4caf50;
+}
+
+.theme-dark {
+    background-color: #121212;
+    border: 1px solid #333;
+}
+
+.theme-desert {
+    background-color: #d2691e;
+}
+
+.theme-algeria {
+    background: linear-gradient(135deg, #136245 0%, #136245 50%, #d21034 50%, #d21034 100%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .theme-switcher {
+        right: 10px;
+        top: auto;
+        bottom: 70px;
+        transform: none;
+    }
+    
+    .theme-switcher-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .theme-switcher.active .theme-switcher-content {
+        transform: translateY(-10px);
+    }
+    
+    .theme-switcher-content {
+        transform: translateY(100%);
+        right: 0;
+        top: auto;
+        bottom: 60px;
+        width: 200px;
+    }
+} 

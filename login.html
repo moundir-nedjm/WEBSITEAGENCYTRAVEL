@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion | MIRA BOOKING</title>
+    <meta name="description" content="Connectez-vous à votre compte MIRA BOOKING pour accéder à votre espace personnel et gérer vos réservations de voyage.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon">
+    <style>
+        .login-wrapper {
+            display: flex;
+            min-height: calc(100vh - 80px);
+            background-color: var(--background-light);
+        }
+        
+        .login-image {
+            flex: 1;
+            background-image: url('img/banner/login-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 30, 48, 0.7) 0%, rgba(36, 59, 85, 0.7) 100%);
+        }
+        
+        .login-image-content {
+            position: relative;
+            max-width: 500px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+        
+        .login-image-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .login-image-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .login-form-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        .login-form-wrapper {
+            width: 100%;
+            max-width: 450px;
+            background-color: var(--card-background);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        
+        .login-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-logo img {
+            max-width: 180px;
+            height: auto;
+        }
+        
+        .login-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .login-tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-secondary);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .login-tab.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .login-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .login-form {
+            display: none;
+        }
+        
+        .login-form.active {
+            display: block;
+        }
+        
+        .login-form h3 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--background-light);
+            color: var(--text-primary);
+        }
+        
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+        
+        .password-input-wrapper {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-wrapper input {
+            margin-right: 8px;
+        }
+        
+        .forgot-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .login-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .login-divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: var(--text-secondary);
+        }
+        
+        .login-divider::before,
+        .login-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+        
+        .login-divider span {
+            padding: 0 15px;
+            font-size: 0.9rem;
+        }
+        
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--background-light);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-btn.facebook {
+            color: #3b5998;
+        }
+        
+        .social-btn.google {
+            color: #dd4b39;
+        }
+        
+        .social-btn.linkedin {
+            color: #0077b5;
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        .signup-link a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .reset-form-container {
+            display: none;
+        }
+        
+        .reset-form-container.active {
+            display: block;
+        }
+        
+        .back-to-login {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-to-login i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 992px) {
+            .login-wrapper {
+                flex-direction: column;
+            }
+            
+            .login-image {
+                min-height: 300px;
+            }
+            
+            .login-image-content {
+                padding: 30px 20px;
+            }
+            
+            .login-form-container {
+                padding: 30px 20px;
+            }
+            
+            .login-form-wrapper {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .login-form-wrapper {
+                padding: 25px 20px;
+            }
+            
+            .login-tabs {
+                margin-bottom: 20px;
+            }
+            
+            .login-tab {
+                padding: 12px 5px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo/logo-mira.png" alt="MIRA BOOKING" onerror="this.src='https://via.placeholder.com/150x50/1e88e5/ffffff?text=MIRA+BOOKING'"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html">Pour les Agences</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline active">Connexion</a>
+                <a href="register.html" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-wrapper">
+        <section class="login-image" style="background-image: url('img/banner/login-bg.jpg');" onerror="this.style.backgroundImage='url(https://via.placeholder.com/1000x1200/3498db/ffffff?text=MIRA+BOOKING)'">
+            <div class="login-image-content">
+                <h2>Bienvenue sur MIRA BOOKING</h2>
+                <p>Connectez-vous pour accéder à votre espace personnel et découvrir des destinations exceptionnelles à travers l'Algérie et le monde entier. Gagnez du temps et bénéficiez de tarifs préférentiels sur nos services de voyage.</p>
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tarifs exclusifs pour les membres</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Gestion facile de vos réservations</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Programme de fidélité avantageux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="login-form-container">
+            <div class="login-form-wrapper">
+                <div class="login-logo">
+                    <img src="img/logo/logo-mira.png" alt="MIRA BOOKING" onerror="this.src='https://via.placeholder.com/180x60/1e88e5/ffffff?text=MIRA+BOOKING'">
+                </div>
+                
+                <div class="login-tabs">
+                    <div class="login-tab active" data-tab="client">Client</div>
+                    <div class="login-tab" data-tab="agency">Agence</div>
+                </div>
+                
+                <!-- Client Login Form -->
+                <div class="login-form active" id="client-login">
+                    <h3>Connexion Client</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="client-email">Email</label>
+                            <input type="email" id="client-email" name="client-email" required placeholder="Votre adresse email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client-password">Mot de passe</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="client-password" name="client-password" required placeholder="Votre mot de passe">
+                                <button type="button" class="toggle-password" data-target="client-password">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="remember-forgot">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="client-remember">
+                                <span>Se souvenir de moi</span>
+                            </label>
+                            <a href="#" class="forgot-link" id="client-forgot-password">Mot de passe oublié?</a>
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Se connecter</button>
+                    </form>
+                    
+                    <div class="login-divider">
+                        <span>Ou connectez-vous via</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <a href="#" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-btn linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="signup-link">
+                        <p>Vous n'avez pas encore de compte? <a href="register.html">S'inscrire</a></p>
+                    </div>
+                </div>
+                
+                <!-- Agency Login Form -->
+                <div class="login-form" id="agency-login">
+                    <h3>Connexion Agence</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="agency-email">Email professionnel</label>
+                            <input type="email" id="agency-email" name="agency-email" required placeholder="Email professionnel">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="agency-password">Mot de passe</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="agency-password" name="agency-password" required placeholder="Votre mot de passe">
+                                <button type="button" class="toggle-password" data-target="agency-password">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="remember-forgot">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" name="agency-remember">
+                                <span>Se souvenir de moi</span>
+                            </label>
+                            <a href="#" class="forgot-link" id="agency-forgot-password">Mot de passe oublié?</a>
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Se connecter</button>
+                    </form>
+                    
+                    <div class="signup-link">
+                        <p>Vous n'êtes pas encore partenaire? <a href="register.html">Devenir agence partenaire</a></p>
+                    </div>
+                </div>
+                
+                <!-- Client Password Reset Form -->
+                <div class="reset-form-container" id="client-reset-form">
+                    <a href="#" class="back-to-login" id="client-back-to-login">
+                        <i class="fas fa-arrow-left"></i> Retour à la connexion
+                    </a>
+                    
+                    <h3>Réinitialisation du mot de passe</h3>
+                    <p>Veuillez saisir l'adresse email associée à votre compte. Nous vous enverrons un lien pour réinitialiser votre mot de passe.</p>
+                    
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="client-reset-email">Email</label>
+                            <input type="email" id="client-reset-email" name="client-reset-email" required placeholder="Votre adresse email">
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Envoyer le lien de réinitialisation</button>
+                    </form>
+                </div>
+                
+                <!-- Agency Password Reset Form -->
+                <div class="reset-form-container" id="agency-reset-form">
+                    <a href="#" class="back-to-login" id="agency-back-to-login">
+                        <i class="fas fa-arrow-left"></i> Retour à la connexion
+                    </a>
+                    
+                    <h3>Réinitialisation du mot de passe</h3>
+                    <p>Veuillez saisir l'adresse email professionnelle associée à votre compte agence. Nous vous enverrons un lien pour réinitialiser votre mot de passe.</p>
+                    
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="agency-reset-email">Email professionnel</label>
+                            <input type="email" id="agency-reset-email" name="agency-reset-email" required placeholder="Email professionnel">
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Envoyer le lien de réinitialisation</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MIRA BOOKING</h3>
+                    <p>Votre partenaire de confiance pour des expériences de voyage exceptionnelles en Algérie et dans le monde entier. Nous connectons les voyageurs avec les meilleures options d'hébergement et d'expériences.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Solutions pour Agences</h4>
+                    <ul>
+                        <li><a href="register.html">Devenir Partenaire</a></li>
+                        <li><a href="#">Intégration API</a></li>
+                        <li><a href="#">Programme d'Affiliation</a></li>
+                        <li><a href="#">Connexion Agence</a></li>
+                        <li><a href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contactez-nous</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Boulevard Mohamed V, Alger, Algérie</p>
+                    <p><i class="fas fa-phone"></i> +213 23 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@mirabooking.dz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MIRA BOOKING. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="#">Conditions d'Utilisation</a>
+                    <a href="#">Politique des Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/enhanced-script.js"></script>
+    <script src="js/theme-switcher.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Login Tab Switching
+            const loginTabs = document.querySelectorAll('.login-tab');
+            const loginForms = document.querySelectorAll('.login-form');
+            
+            loginTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabType = this.getAttribute('data-tab');
+                    
+                    // Update tabs active state
+                    loginTabs.forEach(tab => tab.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update forms visibility
+                    loginForms.forEach(form => form.classList.remove('active'));
+                    document.getElementById(`${tabType}-login`).classList.add('active');
+                    
+                    // Hide reset forms
+                    document.querySelectorAll('.reset-form-container').forEach(form => {
+                        form.classList.remove('active');
+                    });
+                });
+            });
+            
+            // Password visibility toggle
+            const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+            togglePasswordButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const passwordInput = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+                    
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        passwordInput.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            });
+            
+            // Forgot password client
+            document.getElementById('client-forgot-password').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('client-login').classList.remove('active');
+                document.getElementById('client-reset-form').classList.add('active');
+            });
+            
+            // Back to login client
+            document.getElementById('client-back-to-login').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('client-reset-form').classList.remove('active');
+                document.getElementById('client-login').classList.add('active');
+            });
+            
+            // Forgot password agency
+            document.getElementById('agency-forgot-password').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('agency-login').classList.remove('active');
+                document.getElementById('agency-reset-form').classList.add('active');
+            });
+            
+            // Back to login agency
+            document.getElementById('agency-back-to-login').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('agency-reset-form').classList.remove('active');
+                document.getElementById('agency-login').classList.add('active');
+            });
+            
+            // Form submission (placeholder)
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // In a real implementation, this would submit to a server
+                    alert('Fonctionnalité de connexion à implémenter avec un backend');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

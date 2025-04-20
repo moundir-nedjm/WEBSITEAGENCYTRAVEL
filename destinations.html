@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | MIRA BOOKING</title>
+    <meta name="description" content="Explorez les meilleures destinations en Algérie et dans le monde entier avec MIRA BOOKING. Trouvez des hôtels, activités et forfaits pour votre prochain voyage.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon">
+    <style>
+        .destinations-container {
+            padding: 40px 0;
+        }
+        .search-filters {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .destination-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        .destination-img {
+            height: 200px;
+            background-color: #ddd;
+            background-position: center;
+            background-size: cover;
+        }
+        .destination-info {
+            padding: 20px;
+        }
+        .destination-name {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+        }
+        .destination-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        .destination-description {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .destination-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .highlight-tag {
+            background: #e9f0fd;
+            color: #3366cc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .destination-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1e88e5;
+        }
+        .load-more {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .load-more button {
+            background: white;
+            border: 1px solid #1e88e5;
+            color: #1e88e5;
+            padding: 10px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .load-more button:hover {
+            background: #e9f0fd;
+        }
+        /* Map view toggle */
+        .view-toggle {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .view-toggle button {
+            background: #f1f1f1;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .view-toggle button.active {
+            background: #1e88e5;
+            color: white;
+        }
+        .view-toggle button:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+        .view-toggle button:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+        #map-view {
+            height: 600px;
+            background-color: #eee;
+            margin-bottom: 30px;
+            display: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo/logo-mira.png" alt="MIRA BOOKING" onerror="this.src='https://via.placeholder.com/150x50/1e88e5/ffffff?text=MIRA+BOOKING'"></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html">Pour les Agences</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Connexion</a>
+                <a href="#" class="btn btn-primary">Inscription</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header" style="background-image: url('img/banner/destinations-banner.jpg');" onerror="this.style.backgroundImage='url(https://via.placeholder.com/1920x400/3498db/ffffff?text=Destinations)'">
+        <div class="container">
+            <h1>Explorez nos Destinations</h1>
+            <p>Découvrez les merveilles de l'Algérie et du monde entier avec MIRA BOOKING</p>
+        </div>
+        <div class="wave-animation">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="destination-filters">
+        <div class="container">
+            <div class="filter-options">
+                <div class="filter-toggle">
+                    <i class="fas fa-filter"></i> Filtres
+                </div>
+                <div class="view-toggle">
+                    <button id="grid-view-btn" class="view-btn active"><i class="fas fa-th"></i></button>
+                    <button id="map-view-btn" class="view-btn"><i class="fas fa-map-marked-alt"></i></button>
+                </div>
+            </div>
+            
+            <div class="filters-panel">
+                <div class="filter-column">
+                    <div class="filter-group">
+                        <label for="destination-search">Recherche</label>
+                        <input type="text" id="destination-search" placeholder="Nom de destination...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="destination-type">Type de destination</label>
+                        <select id="destination-type">
+                            <option value="all">Tous les types</option>
+                            <option value="city">Ville</option>
+                            <option value="beach">Plage</option>
+                            <option value="mountain">Montagne</option>
+                            <option value="desert">Désert</option>
+                            <option value="historical">Historique</option>
+                            <option value="cultural">Culturel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-column">
+                    <div class="filter-group">
+                        <label for="destination-region">Région</label>
+                        <select id="destination-region">
+                            <option value="all">Toutes les régions</option>
+                            <option value="algeria-north">Algérie - Nord</option>
+                            <option value="algeria-south">Algérie - Sud</option>
+                            <option value="algeria-east">Algérie - Est</option>
+                            <option value="algeria-west">Algérie - Ouest</option>
+                            <option value="mediterranean">Méditerranée</option>
+                            <option value="europe">Europe</option>
+                            <option value="middle-east">Moyen-Orient</option>
+                            <option value="asia">Asie</option>
+                            <option value="americas">Amériques</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="budget-range">Budget</label>
+                        <select id="budget-range">
+                            <option value="all">Tous les budgets</option>
+                            <option value="budget">Économique</option>
+                            <option value="mid-range">Moyenne gamme</option>
+                            <option value="luxury">Luxe</option>
+                            <option value="ultra-luxury">Ultra luxe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-column">
+                    <div class="filter-group">
+                        <label for="travel-season">Saison idéale</label>
+                        <select id="travel-season">
+                            <option value="all">Toutes les saisons</option>
+                            <option value="spring">Printemps</option>
+                            <option value="summer">Été</option>
+                            <option value="fall">Automne</option>
+                            <option value="winter">Hiver</option>
+                            <option value="year-round">Toute l'année</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button id="apply-filters" class="btn btn-primary">Appliquer les filtres</button>
+                        <button id="reset-filters" class="btn btn-outline">Réinitialiser</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations-section">
+        <div class="container">
+            <!-- Grid View -->
+            <div class="destination-grid">
+                <!-- Algeria destinations -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/alger.jpg" alt="Alger" onerror="this.src='https://via.placeholder.com/600x400/3498db/ffffff?text=Alger'">
+                        <div class="destination-badge">Populaire</div>
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Alger</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Algérie, Nord</span>
+                            <span><i class="fas fa-tag"></i> Ville, Culturel</span>
+                        </div>
+                        <p class="destination-description">Découvrez la capitale algérienne avec son mélange unique de culture, d'histoire et d'architecture moderne et coloniale. La Casbah, patrimoine mondial de l'UNESCO, vous attend.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Printemps, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Moyenne gamme</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/oran.jpg" alt="Oran" onerror="this.src='https://via.placeholder.com/600x400/e74c3c/ffffff?text=Oran'">
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Oran</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Algérie, Ouest</span>
+                            <span><i class="fas fa-tag"></i> Ville, Plage</span>
+                        </div>
+                        <p class="destination-description">Oran, la ville côtière vibrante avec son ambiance unique, ses plages magnifiques et son patrimoine culturel riche. Ne manquez pas la visite du Fort Santa Cruz.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Été, Printemps</span>
+                            <span><i class="fas fa-euro-sign"></i> Moyenne gamme</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/constantine.jpg" alt="Constantine" onerror="this.src='https://via.placeholder.com/600x400/2ecc71/ffffff?text=Constantine'">
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Constantine</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Algérie, Est</span>
+                            <span><i class="fas fa-tag"></i> Ville, Historique</span>
+                        </div>
+                        <p class="destination-description">Connue comme la ville des ponts suspendus, Constantine offre des vues à couper le souffle et une richesse historique incroyable que tout voyageur devrait découvrir.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Printemps, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Économique</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/tamanrasset.jpg" alt="Tamanrasset" onerror="this.src='https://via.placeholder.com/600x400/f39c12/ffffff?text=Tamanrasset'">
+                        <div class="destination-badge">Aventure</div>
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Tamanrasset</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Algérie, Sud</span>
+                            <span><i class="fas fa-tag"></i> Désert, Culturel</span>
+                        </div>
+                        <p class="destination-description">La porte du Sahara vous invite à découvrir les paysages désertiques époustouflants et la culture touareg authentique lors d'une aventure inoubliable.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Hiver, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Moyenne gamme</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/tlemcen.jpg" alt="Tlemcen" onerror="this.src='https://via.placeholder.com/600x400/9b59b6/ffffff?text=Tlemcen'">
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Tlemcen</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Algérie, Ouest</span>
+                            <span><i class="fas fa-tag"></i> Historique, Culturel</span>
+                        </div>
+                        <p class="destination-description">Ancienne capitale du Maghreb central, Tlemcen est riche en histoire avec ses mosquées, palais et fortifications qui témoignent de son glorieux passé.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Printemps, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Économique</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/ghardaia.jpg" alt="Ghardaïa" onerror="this.src='https://via.placeholder.com/600x400/1abc9c/ffffff?text=Ghardaïa'">
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Ghardaïa</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Algérie, Centre</span>
+                            <span><i class="fas fa-tag"></i> Culturel, Historique</span>
+                        </div>
+                        <p class="destination-description">La pentapole du M'zab est un joyau architectural unique avec ses cinq ksour fortifiés et son mode de vie traditionnel préservé à travers les siècles.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Automne, Hiver</span>
+                            <span><i class="fas fa-euro-sign"></i> Économique</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <!-- International destinations -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/paris.jpg" alt="Paris" onerror="this.src='https://via.placeholder.com/600x400/3498db/ffffff?text=Paris'">
+                        <div class="destination-badge">Tendance</div>
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Paris</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> France, Europe</span>
+                            <span><i class="fas fa-tag"></i> Ville, Culturel</span>
+                        </div>
+                        <p class="destination-description">La ville des lumières vous émerveillera avec ses monuments emblématiques, sa gastronomie exceptionnelle et son ambiance romantique incomparable.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Printemps, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Luxe</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/istanbul.jpg" alt="Istanbul" onerror="this.src='https://via.placeholder.com/600x400/e74c3c/ffffff?text=Istanbul'">
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Istanbul</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Turquie, Moyen-Orient</span>
+                            <span><i class="fas fa-tag"></i> Ville, Historique</span>
+                        </div>
+                        <p class="destination-description">À cheval entre l'Europe et l'Asie, Istanbul vous captivera avec ses mosquées majestueuses, ses bazars animés et son histoire fascinante.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Printemps, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Moyenne gamme</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="img/destinations/dubai.jpg" alt="Dubai" onerror="this.src='https://via.placeholder.com/600x400/f39c12/ffffff?text=Dubai'">
+                    </div>
+                    <div class="destination-info">
+                        <h3 class="destination-name">Dubai</h3>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Émirats Arabes Unis, Moyen-Orient</span>
+                            <span><i class="fas fa-tag"></i> Ville, Luxe</span>
+                        </div>
+                        <p class="destination-description">Cité futuriste au cœur du désert, Dubai impressionne par ses gratte-ciels vertigineux, ses centres commerciaux extravagants et ses expériences de luxe inégalées.</p>
+                        <div class="destination-features">
+                            <span><i class="fas fa-sun"></i> Hiver, Automne</span>
+                            <span><i class="fas fa-euro-sign"></i> Ultra luxe</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Explorer</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map View -->
+            <div id="map-view" style="display: none;">
+                <div class="map-container">
+                    <div style="background-color: #f5f5f5; padding: 30px; text-align: center; border-radius: 8px;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 48px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3>Vue Carte Interactive</h3>
+                        <p>Cette fonctionnalité serait implémentée avec une API cartographique comme Google Maps ou Leaflet.js pour afficher toutes les destinations avec des marqueurs interactifs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="load-more-container">
+                <button id="load-more-btn" class="btn btn-secondary">Voir Plus de Destinations</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter" style="background-image: url('img/banner/newsletter-bg.jpg');" onerror="this.style.backgroundImage='url(https://via.placeholder.com/1920x400/2c3e50/ffffff?text=Newsletter)'">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Restez informé des dernières offres de voyage</h2>
+                <p>Inscrivez-vous à notre newsletter pour recevoir des offres exclusives et des inspirations de voyage.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'abonner</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MIRA BOOKING</h3>
+                    <p>Votre partenaire de confiance pour des expériences de voyage exceptionnelles en Algérie et dans le monde entier. Nous connectons les voyageurs avec les meilleures options d'hébergement et d'expériences.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Solutions pour Agences</h4>
+                    <ul>
+                        <li><a href="register.html">Devenir Partenaire</a></li>
+                        <li><a href="#">Intégration API</a></li>
+                        <li><a href="#">Programme d'Affiliation</a></li>
+                        <li><a href="#">Connexion Agence</a></li>
+                        <li><a href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contactez-nous</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Boulevard Mohamed V, Alger, Algérie</p>
+                    <p><i class="fas fa-phone"></i> +213 23 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@mirabooking.dz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MIRA BOOKING. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="#">Conditions d'Utilisation</a>
+                    <a href="#">Politique des Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/enhanced-script.js"></script>
+    <script src="js/theme-switcher.js"></script>
+</body>
+</html> 

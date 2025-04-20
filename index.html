@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRA BOOKING - Système de Réservation B2B pour Agences de Voyage</title>
+    <meta name="description" content="MIRA BOOKING offre un système de réservation B2B complet pour les agences de voyage avec accès à un inventaire mondial d'hôtels, d'activités et de transferts.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo/logo-mira.png" alt="MIRA BOOKING" onerror="this.src='https://via.placeholder.com/150x50/1e88e5/ffffff?text=MIRA+BOOKING'"></a>
+            </div>
+            <div class="mobile-menu-toggle" aria-expanded="false" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html">Pour les Agences</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Connexion</a>
+                <a href="register.html" class="btn btn-primary">Inscription</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: url('img/banner/algiers-banner.jpg');" onerror="this.style.backgroundImage='url(https://via.placeholder.com/1920x800/2c3e50/ffffff?text=Alger+Magnifique)'">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Découvrez l'Algérie et le monde entier avec MIRA BOOKING</h1>
+                <p>Votre partenaire de confiance pour des réservations de voyage sans tracas. Explorez notre vaste sélection d'hôtels, vols et expériences.</p>
+                <div class="hero-buttons">
+                    <a href="destinations.html" class="btn btn-primary">Explorer les Destinations</a>
+                    <a href="register.html" class="btn btn-secondary">Devenir Partenaire</a>
+                </div>
+            </div>
+            <div class="search-box">
+                <h3>Trouvez Votre Prochain Voyage</h3>
+                <form action="#" method="get" class="search-form">
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="Où allez-vous?">
+                    </div>
+                    <div class="form-group">
+                        <label for="check-in">Arrivée</label>
+                        <input type="date" id="check-in">
+                    </div>
+                    <div class="form-group">
+                        <label for="check-out">Départ</label>
+                        <input type="date" id="check-out">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Voyageurs</label>
+                        <select id="guests">
+                            <option value="1">1 Personne</option>
+                            <option value="2">2 Personnes</option>
+                            <option value="3">3 Personnes</option>
+                            <option value="4">4 Personnes</option>
+                            <option value="5+">5+ Personnes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-search">Rechercher</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi Choisir MIRA BOOKING?</h2>
+                <p>Des avantages exclusifs pour une expérience de voyage inoubliable</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Réseau Global</h3>
+                    <p>Accédez à notre vaste réseau d'hôtels, vols et expériences dans toute l'Algérie et à l'international.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Meilleurs Tarifs</h3>
+                    <p>Bénéficiez de tarifs compétitifs et d'offres exclusives pour maximiser votre budget voyage.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3>Qualité Garantie</h3>
+                    <p>Nous sélectionnons soigneusement nos partenaires pour vous garantir des services de haute qualité.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support 24/7</h3>
+                    <p>Notre équipe de support client est disponible en permanence pour vous assister tout au long de votre voyage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Destinations Populaires</h2>
+                <p>Découvrez nos destinations les plus recherchées en Algérie et dans le monde</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="img/destinations/alger.jpg" alt="Alger" onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Alger'">
+                    <div class="destination-content">
+                        <h3>Alger</h3>
+                        <p>La capitale fascinante entre tradition et modernité</p>
+                        <a href="#" class="btn btn-outline">Explorer</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/destinations/oran.jpg" alt="Oran" onerror="this.src='https://via.placeholder.com/400x300/e74c3c/ffffff?text=Oran'">
+                    <div class="destination-content">
+                        <h3>Oran</h3>
+                        <p>La ville côtière vibrante au riche patrimoine culturel</p>
+                        <a href="#" class="btn btn-outline">Explorer</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/destinations/constantine.jpg" alt="Constantine" onerror="this.src='https://via.placeholder.com/400x300/2ecc71/ffffff?text=Constantine'">
+                    <div class="destination-content">
+                        <h3>Constantine</h3>
+                        <p>La cité des ponts suspendus à l'architecture spectaculaire</p>
+                        <a href="#" class="btn btn-outline">Explorer</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/destinations/tamanrasset.jpg" alt="Tamanrasset" onerror="this.src='https://via.placeholder.com/400x300/f39c12/ffffff?text=Tamanrasset'">
+                    <div class="destination-content">
+                        <h3>Tamanrasset</h3>
+                        <p>La porte du Sahara aux paysages désertiques magnifiques</p>
+                        <a href="#" class="btn btn-outline">Explorer</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/destinations/tlemcen.jpg" alt="Tlemcen" onerror="this.src='https://via.placeholder.com/400x300/9b59b6/ffffff?text=Tlemcen'">
+                    <div class="destination-content">
+                        <h3>Tlemcen</h3>
+                        <p>La perle du Maghreb aux trésors historiques</p>
+                        <a href="#" class="btn btn-outline">Explorer</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="img/destinations/paris.jpg" alt="Paris" onerror="this.src='https://via.placeholder.com/400x300/1abc9c/ffffff?text=Paris'">
+                    <div class="destination-content">
+                        <h3>Paris</h3>
+                        <p>La ville des lumières aux monuments emblématiques</p>
+                        <a href="#" class="btn btn-outline">Explorer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="destinations.html" class="btn btn-secondary">Voir Toutes les Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" style="background-image: url('img/banner/testimonial-bg.jpg');" onerror="this.style.backgroundImage='url(https://via.placeholder.com/1920x800/34495e/ffffff?text=Témoignages)'">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Ce Que Disent Nos Clients</h2>
+                <p>Découvrez les expériences de voyage inoubliables avec MIRA BOOKING</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"MIRA BOOKING a transformé notre façon de voyager. Leur service exceptionnel et leur attention aux détails ont rendu notre séjour à Oran parfait!"</p>
+                        <div class="testimonial-author">
+                            <img src="img/client/client1.jpg" alt="Sarah Benkada" onerror="this.src='https://via.placeholder.com/80x80/3498db/ffffff?text=SB'">
+                            <div>
+                                <h4>Sarah Benkada</h4>
+                                <p>Alger, Algérie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"En tant qu'agence de voyage, notre partenariat avec MIRA BOOKING nous a permis d'offrir à nos clients des expériences exceptionnelles à des tarifs compétitifs."</p>
+                        <div class="testimonial-author">
+                            <img src="img/client/client2.jpg" alt="Karim Hadj" onerror="this.src='https://via.placeholder.com/80x80/e74c3c/ffffff?text=KH'">
+                            <div>
+                                <h4>Karim Hadj</h4>
+                                <p>Voyages Sahara, Constantine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"Notre voyage familial dans le désert algérien a été une révélation! MIRA BOOKING a organisé chaque détail avec professionnalisme et une connaissance approfondie."</p>
+                        <div class="testimonial-author">
+                            <img src="img/client/client3.jpg" alt="Amina et Mohamed Benali" onerror="this.src='https://via.placeholder.com/80x80/2ecc71/ffffff?text=AB'">
+                            <div>
+                                <h4>Amina et Mohamed Benali</h4>
+                                <p>Tlemcen, Algérie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à Découvrir l'Algérie et le Monde?</h2>
+                <p>Rejoignez MIRA BOOKING aujourd'hui et commencez à planifier votre prochaine aventure.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Créer un Compte</a>
+                    <a href="contact.html" class="btn btn-outline">Contactez-nous</a>
+                </div>
+            </div>
+            <div class="cta-image">
+                <img src="img/banner/cta-image.jpg" alt="Voyage en Algérie" onerror="this.src='https://via.placeholder.com/500x300/3498db/ffffff?text=Découvrez+lAlgérie'">
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MIRA BOOKING</h3>
+                    <p>Votre partenaire de confiance pour des expériences de voyage exceptionnelles en Algérie et dans le monde entier. Nous connectons les voyageurs avec les meilleures options d'hébergement et d'expériences.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Solutions pour Agences</h4>
+                    <ul>
+                        <li><a href="register.html">Devenir Partenaire</a></li>
+                        <li><a href="#">Intégration API</a></li>
+                        <li><a href="#">Programme d'Affiliation</a></li>
+                        <li><a href="#">Connexion Agence</a></li>
+                        <li><a href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contactez-nous</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Boulevard Mohamed V, Alger, Algérie</p>
+                    <p><i class="fas fa-phone"></i> +213 23 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@mirabooking.dz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MIRA BOOKING. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#">Politique de Confidentialité</a>
+                    <a href="#">Conditions d'Utilisation</a>
+                    <a href="#">Politique des Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme-switcher.js"></script>
+</body>
+</html> 
